@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 18, 2021 at 02:58 PM
+-- Generation Time: Dec 18, 2021 at 03:36 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -57,7 +57,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (1, '2014_10_12_000000_create_users_table', 1),
 (2, '2014_10_12_100000_create_password_resets_table', 1),
 (3, '2019_08_19_000000_create_failed_jobs_table', 1),
-(4, '2019_12_14_000001_create_personal_access_tokens_table', 1);
+(4, '2019_12_14_000001_create_personal_access_tokens_table', 1),
+(5, '2021_12_18_143359_add_username_to_users_table', 2);
 
 -- --------------------------------------------------------
 
@@ -103,15 +104,16 @@ CREATE TABLE `users` (
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `username` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(2, 'password123', 'password123@email.com', '2021-12-18 13:33:57', '$2y$10$CsOmi6nBfcNL3cNpzUxi7.u3A.kIovIO5qSWmA3CjWkHAM7W.mlle', 'Qcqjb6fmDwTSE9uufKwMIUGBUTXKdUOuE7KjvQYHuBMy7cTCmHAyiUKuAb76', '2021-12-18 13:30:41', '2021-12-18 13:30:41');
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `username`) VALUES
+(2, 'password123', 'password123@email.com', '2021-12-18 13:33:57', '$2y$10$CsOmi6nBfcNL3cNpzUxi7.u3A.kIovIO5qSWmA3CjWkHAM7W.mlle', 'Qcqjb6fmDwTSE9uufKwMIUGBUTXKdUOuE7KjvQYHuBMy7cTCmHAyiUKuAb76', '2021-12-18 13:30:41', '2021-12-18 13:30:41', 'password123');
 
 --
 -- Indexes for dumped tables
@@ -149,7 +151,8 @@ ALTER TABLE `personal_access_tokens`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `users_email_unique` (`email`);
+  ADD UNIQUE KEY `users_email_unique` (`email`),
+  ADD UNIQUE KEY `users_username_unique` (`username`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -165,7 +168,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
