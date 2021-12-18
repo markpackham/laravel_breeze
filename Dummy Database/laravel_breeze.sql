@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 18, 2021 at 03:36 PM
+-- Generation Time: Dec 18, 2021 at 03:45 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -113,7 +113,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `username`) VALUES
-(2, 'password123', 'password123@email.com', '2021-12-18 13:33:57', '$2y$10$CsOmi6nBfcNL3cNpzUxi7.u3A.kIovIO5qSWmA3CjWkHAM7W.mlle', 'Qcqjb6fmDwTSE9uufKwMIUGBUTXKdUOuE7KjvQYHuBMy7cTCmHAyiUKuAb76', '2021-12-18 13:30:41', '2021-12-18 13:30:41', 'password123');
+(2, 'password123', 'password123@email.com', '2021-12-18 13:33:57', '$2y$10$CsOmi6nBfcNL3cNpzUxi7.u3A.kIovIO5qSWmA3CjWkHAM7W.mlle', 'p76Dp6JrYE7rfxMRrucKsgcpFbuOGuMz0OS966Ib135ec5ihNjjw16b8fu9i', '2021-12-18 13:30:41', '2021-12-18 13:30:41', 'password123'),
+(4, 'password321', 'password321@email.com', '2021-12-18 14:45:12', '$2y$10$Wu8oLM/0IyHJ9mKOH1dG6ew9gFxEeZe2tc8.j5k4r36x3mPlyZ9o.', NULL, '2021-12-18 14:44:58', '2021-12-18 14:44:58', 'password321');
 
 --
 -- Indexes for dumped tables
@@ -180,7 +181,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
